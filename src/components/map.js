@@ -18,32 +18,40 @@ function Map() {
     const [ip , setIp] = useState("")
 
     const [data, setData] = useState({
-        query: "185.35.50.4",
-        continent: "Europe",
-        continentCode: "EU",
-        country: "United Kingdom",
-        countryCode: "GB",
-        region: "ENG",
-        regionName: "England",
-        city: "Great Bentley",
-        district: "",
-        lat: 51.8533,
-        lon: 1.06379,
-        timezone: "Europe/London",
-        currency: "GBP",
-        isp: "The Random House Group Limited",
-        org: "Penguin Random House Public Addresses",
-        as: "AS200164 The Random House Group Limited",
-        asname: "RHG-AS",
+        geoplugin_request:"185.35.50.4",
+        geoplugin_status:206,
+        geoplugin_delay:"1ms",
+        geoplugin_credit:"Some of the returned data includes GeoLite data created by MaxMind, available from.",
+        geoplugin_city:"",
+        geoplugin_region:"",
+        geoplugin_regionCode:"",
+        geoplugin_regionName:"",
+        geoplugin_areaCode:"",
+        geoplugin_dmaCode:"",
+        geoplugin_countryCode:"GB",
+        geoplugin_countryName:"United Kingdom",
+        geoplugin_inEU:0,
+        geoplugin_euVATrate:false,
+        geoplugin_continentCode:"EU",
+        geoplugin_continentName:"Europe",
+        geoplugin_latitude:"51.4964",
+        geoplugin_longitude:"-0.1224",
+        geoplugin_locationAccuracyRadius:"200",
+        geoplugin_timezone:"Europe London",
+        geoplugin_currencyCode:"GBP",
+        geoplugin_currencySymbol:"£",
+        geoplugin_currencySymbol_UTF8:"£",
+        geoplugin_currencyConverter:0.7947
     })
 
     function mudacidade(event) {
         event.preventDefault();
         
         fetch(
-          `http://ip-api.com/json/${ip}`
+          `http://www.geoplugin.net/json.gp?ip=${ip}`
         )
           .then((resposta) => {
+            
             if (resposta.status === 200) {
               return resposta.json();
             }else{
@@ -51,8 +59,8 @@ function Map() {
             }
           })
           .then((dados) => {
-
-            if(dados.status === "success"){
+            console.log(dados);
+            if(dados){
                 setData(dados);
                 setloadMap(null)
                 
@@ -88,12 +96,12 @@ return(
     </form>
         
     {loadMap ? (<>    
-        <StyledMapContainer center={[ data.lat,  data.lon]} zoom={13} scrollWheelZoom={true} >
+        <StyledMapContainer center={[ data.geoplugin_latitude,  data.geoplugin_longitude]} zoom={13} scrollWheelZoom={true} >
             <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={[ data.lat,  data.lon]}>
+            <Marker position={[ data.geoplugin_latitude,  data.geoplugin_longitude]}>
             <Popup>
                 A pretty CSS3 popup. <br /> Easily customizable.
             </Popup>
