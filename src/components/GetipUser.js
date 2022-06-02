@@ -14,7 +14,7 @@ function GetipUser(prop) {
         .then((dados) => {
            
             alert(`seu ip é ${dados.ip}`)
-        }).then(() => prop.setgetip(null)); },[])
+        }).then(() => prop.setgetip(null)); },[prop])
         
         
 }
