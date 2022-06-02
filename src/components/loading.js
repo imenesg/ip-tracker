@@ -24,9 +24,6 @@ const StyledLoad = styled.div`
 
     animation: ${animationLoading} .5s .1s  linear infinite;
 
-
- 
-
 `
 
 function Loadng() {

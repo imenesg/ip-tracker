@@ -17,6 +17,8 @@ export const ContainerMap = styled.div `
      align-items: center;
     background-image: url(${bg});
      padding: 2rem;
+     padding-bottom: 7rem;
+     
 
      h1{
          color: #fff;
@@ -63,12 +65,35 @@ export const ContainerMap = styled.div `
      cursor: pointer;
      font-size: 1.5rem;
  }
+
+ @media (max-width: 600px)
+    {  
+        form{
+            padding: 2rem;
+            padding-bottom: 9rem;
+            padding-top: 1rem;
+            
+            div{
+                margin-top: 1rem;
+            }
+
+            input{
+                width: 100%;
+            }
+        }
+    }
 `
 
 export const StyledMapContainer = styled(MapContainer) `
    width: 100%;
-   height: calc(100vh - 11rem);
+   height: calc(100vh - 16rem);
    z-index: 1;
+
+
+   @media (max-width: 600px)
+    {  
+        height: calc(100vh - 16rem);
+    }
 `
 
 

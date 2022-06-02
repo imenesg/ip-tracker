@@ -2,6 +2,8 @@ import { TileLayer, Marker, Popup} from 'react-leaflet'
 import {React , useState} from 'react'
 import Loading from "./loading"
 
+import CardInfos from "../components/CardInfos"
+
 import GetipUser from './GetipUser'
 import 'boxicons'
 import {ContainerMap, StyledMapContainer} from "../assets/styles/style.js"
@@ -99,7 +101,8 @@ return(
         
     </form> 
         
-    {loadMap ? (<>    
+    {loadMap ? (<>
+    <CardInfos data={data}></CardInfos>   
         <StyledMapContainer center={[ data.latitude,  data.longitude]} zoom={13} scrollWheelZoom={true} >
             <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
