@@ -16,6 +16,7 @@ export const ContainerMap = styled.div `
      flex-direction: column;
      align-items: center;
     background-image: url(${bg});
+    background-size: cover;
      padding: 2rem;
      padding-bottom: 7rem;
      
