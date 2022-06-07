@@ -58,7 +58,7 @@ function CardInfos({data}) {
   return(
     <Cardinfo>
         <div>
-            <h2>Enderço IP</h2>
+            <h2>Endereço IP</h2>
             <h3>{data.ip}</h3>
         </div>
 

@@ -17,12 +17,18 @@ const animationLoading = keyframes`
 
 const StyledLoad = styled.div`
     width: 100%;
-   height: calc(100vh - 11rem);
+    height: calc(100vh - 16rem);
     display: flex;
     align-items: center;
     justify-content: center;
 
     animation: ${animationLoading} .5s .1s  linear infinite;
+
+
+    @media (max-width: 600px)
+    {  
+        height: calc(100vh - 16rem);
+    }
 
 `
 

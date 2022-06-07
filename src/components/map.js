@@ -13,7 +13,7 @@ import {ContainerMap, StyledMapContainer} from "../assets/styles/style.js"
 
 function Map() {
 
-    const [getip, setgetip] = useState(null)
+    const [getip, setgetip] = useState(false)
 
     const [loadMap, setloadMap] = useState(true)
 
@@ -63,15 +63,12 @@ function Map() {
             }
           })
           .then((dados) => {
-            console.log(dados.error);
             if(dados.error){
-            alert(`Algo deu errado :(, por gentileja verifique seu IP :)`)
+            alert(`Algo deu errado :(, por gentileza verifique seu IP :)`)
             ;
             }else{
-                console.log(dados);
                 setData(dados);
                 setloadMap(null)
-                
                 setTimeout(() => {
                 setloadMap(true)
             }, 1000)
@@ -94,7 +91,7 @@ return(
         <h1>Rastreador de IP</h1>
 
         <div>
-            <input type='text'  value={ip} placeholder="Digite seu IP" onChange={funOnChange}></input>
+            <input type='text'  value={ip} placeholder="Digite/cole o IP" onChange={funOnChange}></input>
 
             <button  type="submit" ><box-icon color="#fff" name='chevron-right'></box-icon></button>
         </div>
@@ -110,15 +107,15 @@ return(
             />
             <Marker position={[ data.latitude,  data.longitude]}>
             <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
+                O IP informado leva para um local <br /> aproximadamente por aqui.
             </Popup>
             </Marker>
         </StyledMapContainer></>
     ) : (<Loading></Loading>)}
     
-   <button  onClick={() => {setgetip(!getip);console.log("passou aqui");}}>Qual meu IP?</button>
+   <button  onClick={() => {setgetip(!getip)}}>Qual meu IP?</button>
 
-    {getip ? (<GetipUser setgetip={setgetip}></GetipUser>) : (null)}
+    {getip ? (<GetipUser setgetip={setgetip} getip={getip} ></GetipUser>) : (null)}
 
    </ContainerMap>
    
