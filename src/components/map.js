@@ -5,7 +5,7 @@ import Loading from "./loading"
 import CardInfos from "../components/CardInfos"
 
 import GetUserIp from './GetUserIp'
-import 'boxicons'
+
 import {ContainerMap, StyledMapContainer} from "../assets/styles/style.js"
 
 
@@ -63,8 +63,9 @@ function Map() {
           })
           .then((dados) => {
 
-           let error = dados.error ? alert(`Algo deu errado :(, por gentileza verifique seu IP :)`) : (setData(dados), setloadMap(null), setTimeout(() => {setloadMap(true)}, 1000) )                                                                                                                                                                                                                                                      
-            
+           const error = dados.error ? alert(`Algo deu errado :(, por gentileza verifique seu IP :)`) : (setData(dados), setloadMap(null), setTimeout(() => {setloadMap(true)}, 1000) )  
+
+           return(error)                                                                                                                                                                                                                                                    
           }); 
       }
 
@@ -84,7 +85,7 @@ return(
         <div>
             <input type='text'  value={ip} placeholder="Digite/cole o IP" onChange={funOnChange}></input>
 
-            <button  type="submit" ><box-icon color="#fff" name='chevron-right'></box-icon></button>
+            <button  type="submit" ><i className='bx bx-chevron-right'></i></button>
         </div>
         
     </form> 

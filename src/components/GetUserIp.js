@@ -68,7 +68,7 @@ const [message, setMessage] = useState(null)
         .then((dados) => {
            
             /*alert(`Seu ip é ${dados.ip}`)*/
-            setMessage(`🗺️ Seu ip é ${dados.ip} 🧭`)
+            setMessage(`🗺️Seu ip é ${dados.ip}🧭`)
         }); },[prop])
 
         if(message){

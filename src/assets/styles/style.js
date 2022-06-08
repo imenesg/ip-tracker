@@ -36,6 +36,7 @@ export const ContainerMap = styled.div `
      max-width: 500px;
      padding: .5rem;
      border: none;
+     
  }
  & form div{
      margin-top: 2rem;
@@ -43,6 +44,7 @@ export const ContainerMap = styled.div `
      flex-direction: row;
      justify-content: center;
      width: 100%;
+     font-size: 1.5rem;
      
  }
  & form button{
@@ -52,6 +54,12 @@ export const ContainerMap = styled.div `
      padding: .5rem;
      cursor: pointer;
      border: none;
+     
+     i{
+         font-size: 1.5rem;
+         color: #fff;
+         font-weight: 700;
+     }
  }
  & > button{
      background-color: rgb(69, 62, 153);
@@ -87,13 +95,13 @@ export const ContainerMap = styled.div `
 
 export const StyledMapContainer = styled(MapContainer) `
    width: 100%;
-   height: calc(100vh - 16rem);
+   height: calc(100vh - 15.875rem);
    z-index: 1;
 
 
    @media (max-width: 600px)
     {  
-        height: calc(100vh - 16rem);
+        height: calc(100vh - 15.875rem);
     }
 `
 
