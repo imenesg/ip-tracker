@@ -19,7 +19,7 @@ const Cardinfo = styled.div`
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
 
-    div{
+    section{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -57,26 +57,26 @@ const Cardinfo = styled.div`
 function CardInfos({data}) {
   return(
     <Cardinfo>
-        <div>
+        <section>
             <h2>Endereço IP</h2>
             <h3>{data.ip}</h3>
-        </div>
+        </section>
 
-        <div>
+        <section>
             <h2>Local</h2>
             <h3>{data.city}</h3>
             <h3>{data.region}{data.country_code}</h3>
-        </div>
+        </section>
 
-        <div>
+        <section>
             <h2>Moeda</h2>
             <h3>{data.currency_name}</h3>
-        </div>
+        </section>
 
-        <div>
+        <section>
             <h2>Provedora</h2>
             <h3>{data.org}</h3>
-        </div>
+        </section>
     </Cardinfo>
   );
 }

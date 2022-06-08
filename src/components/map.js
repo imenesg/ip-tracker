@@ -4,7 +4,7 @@ import Loading from "./loading"
 
 import CardInfos from "../components/CardInfos"
 
-import GetipUser from './GetipUser'
+import GetUserIp from './GetUserIp'
 import 'boxicons'
 import {ContainerMap, StyledMapContainer} from "../assets/styles/style.js"
 
@@ -48,14 +48,13 @@ function Map() {
         org: "GOOGLE"
     })
 
-    function mudacidade(event) {
+    function changeLocation(event) {
         event.preventDefault();
         
         fetch(
           `https://ipapi.co/${ip}/json/`
         )
           .then((resposta) => {
-            
             if (resposta.status === 200) {
               return resposta.json();
             }else{
@@ -63,16 +62,8 @@ function Map() {
             }
           })
           .then((dados) => {
-            if(dados.error){
-            alert(`Algo deu errado :(, por gentileza verifique seu IP :)`)
-            ;
-            }else{
-                setData(dados);
-                setloadMap(null)
-                setTimeout(() => {
-                setloadMap(true)
-            }, 1000)
-            }
+
+           let error = dados.error ? alert(`Algo deu errado :(, por gentileza verifique seu IP :)`) : (setData(dados), setloadMap(null), setTimeout(() => {setloadMap(true)}, 1000) )                                                                                                                                                                                                                                                      
             
           }); 
       }
@@ -87,7 +78,7 @@ return(
     <ContainerMap>
     
 
-    <form onSubmit={mudacidade}>
+    <form onSubmit={changeLocation}>
         <h1>Rastreador de IP</h1>
 
         <div>
@@ -115,7 +106,7 @@ return(
     
    <button  onClick={() => {setgetip(!getip)}}>Qual meu IP?</button>
 
-    {getip ? (<GetipUser setgetip={setgetip} getip={getip} ></GetipUser>) : (null)}
+    {getip ? (<GetUserIp setgetip={setgetip} getip={getip} ></GetUserIp>) : (null)}
 
    </ContainerMap>
    

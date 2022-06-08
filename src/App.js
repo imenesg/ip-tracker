@@ -5,7 +5,7 @@ import "./assets/styles/style.js"
 function App() {
     return (
       <>
-      <Map></Map>
+      <Map/>
       </>
     );
 }
