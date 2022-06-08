@@ -27,7 +27,7 @@ const StyledLoad = styled.div`
 
     @media (max-width: 600px)
     {  
-        height: calc(100vh - 16rem);
+        height: calc(100vh - 15.875rem);
     }
 
 `
