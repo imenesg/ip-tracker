@@ -1,3 +1,26 @@
+# 🚩 IP tracker 🚩
+
+
+### 👋Olá, esse é um projeto em react.js feito por mim, nele você pode passar seu ou qualquer outro IP para rastrear e ser levado até a região do IP através de um mapa.  <br>
+
+### Dê uma conferida 😁
+
+### 🖥️Realizei o projeto utilizando: React.js, Styled-components, uma API para pegar o IP e retornar a latitude/longitude, e alguns outros dados, e por fim uma biblioteca para o mapa(Leaflet). 
+
+<P>
+
+  
+  <p align="center">
+    
+  <img width="800" height="" src="https://user-images.githubusercontent.com/69609443/173717966-a28e8f0c-24ff-40e0-97ae-4d8f3d0e865e.gif">
+</p>
+ 
+ ## O site tambem é totalmente responsivo📱.
+   
+
+  
+## De uma olhada. 😃**LINK**: https://imenesg-iptracker.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
